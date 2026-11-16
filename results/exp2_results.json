@@ -1,0 +1,43 @@
+{
+  "experiment": "exp_2",
+  "title": "Strong duality verification: primal and dual value comparison",
+  "full_configuration": false,
+  "mc_n_paths": 20000,
+  "reference_vol": 0.22,
+  "target_price_vector": [
+    0.021872335941593463,
+    0.09164143287260229,
+    0.02703270510969555,
+    0.08759062508463361,
+    0.18743535956629265
+  ],
+  "lambda_star": [
+    -1.2492168325847426,
+    -0.3399195455494157,
+    -9.767272832774387,
+    -2.6827535972077414,
+    -6.692777668712563
+  ],
+  "D_HJB": -0.6272535897651157,
+  "D_reg": -0.6272535897651157,
+  "V_primal_fokker_planck": -0.6318157601252496,
+  "relative_duality_gap": 0.007273247111813782,
+  "fokker_planck_prices": [
+    0.022435668371091556,
+    0.09223710939824875,
+    0.02795062916438297,
+    0.0886990849785968,
+    0.18847924051774442
+  ],
+  "fokker_planck_calibration_max_error": 0.0011084598939631873,
+  "monte_carlo_prices": [
+    0.021783205756183942,
+    0.09140906397582714,
+    0.027647129429807342,
+    0.08974016982626444,
+    0.18908894250105865
+  ],
+  "monte_carlo_calibration_max_error": 0.0021495447416308294,
+  "monte_carlo_std_error_estimate": 0.0012152816274451628,
+  "elapsed_seconds": 15.307872295379639
+}
