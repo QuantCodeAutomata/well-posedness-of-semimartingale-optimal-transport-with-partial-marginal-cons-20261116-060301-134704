@@ -1,0 +1,67 @@
+{
+  "experiment": "exp_1",
+  "title": "HJB cascade solver: backward induction and dual value map computation",
+  "full_configuration": false,
+  "grid": {
+    "L": 2.5,
+    "n_x": 161,
+    "dx": 0.03125
+  },
+  "payoff_family": {
+    "P": 2,
+    "MP": 5,
+    "M_p": [
+      2,
+      3
+    ],
+    "maturities": [
+      0.5,
+      1.0
+    ],
+    "strikes_per_maturity": [
+      [
+        0.9,
+        1.05
+      ],
+      [
+        0.85,
+        1.0,
+        1.15
+      ]
+    ]
+  },
+  "phi0_at_lambda_zero": 1.6635532333438734,
+  "convexity_check": {
+    "n_triples": 100,
+    "min_defect": 8.513863345172012e-05,
+    "mean_defect": 0.0024784815181047646,
+    "n_violations_below_tol": 0,
+    "convexity_holds": true
+  },
+  "differentiability_check": {
+    "lambda_probe": [
+      -0.29639124984542,
+      0.38365247473184305,
+      -0.9102888081770544,
+      0.8678062767103387,
+      0.16482294313311452
+    ],
+    "analytic_gradient": [
+      0.09211136642162998,
+      0.1746548977396431,
+      0.12036177419234573,
+      0.20333279124711026,
+      0.3017172850256385
+    ],
+    "finite_difference_gradient": [
+      0.09211136630327132,
+      0.17465489758772268,
+      0.12036177410479354,
+      0.2033327911445948,
+      0.30171728487926597
+    ],
+    "max_abs_error": 1.5192042068790101e-10,
+    "max_rel_error": 1.2849516944472378e-09
+  },
+  "elapsed_seconds": 78.45526623725891
+}
