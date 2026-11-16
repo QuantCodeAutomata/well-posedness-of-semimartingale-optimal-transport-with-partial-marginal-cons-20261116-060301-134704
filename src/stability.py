@@ -97,13 +97,19 @@ def estimate_lipschitz_constant(pi0: np.ndarray, lam0_star: np.ndarray, payoffs:
 
 def value_function_gradient_check(pi0: np.ndarray, lam0_star: np.ndarray, payoffs: PayoffFamily, x0: float,
                                    grid: Grid, fd_step: float) -> tuple[np.ndarray, np.ndarray]:
-    """Finite-difference grad V(pi0) compared with lambda*(pi0): both should equal lambda* (eq. 31)."""
+    """Finite-difference grad V(pi0) compared with lambda*(pi0): both should equal lambda* (eq. 31).
+
+    Uses a central difference: the local curvature of V = Phi_0^* scales as 1/m_K
+    (Theorem 3.1), which can be large when the strong-convexity modulus m_K is
+    small, so a one-sided difference carries an O(h) truncation bias of order
+    h * ||Hess V||; the centered scheme reduces this to O(h^2).
+    """
     mp = payoffs.MP
     value_at = lambda pi: calibrate(pi, payoffs, x0, grid, lam0=lam0_star).value
-    v0 = value_at(pi0)
     grad_v = np.zeros(mp)
     for i in range(mp):
-        pi_pert = pi0.copy()
-        pi_pert[i] += fd_step
-        grad_v[i] = (value_at(pi_pert) - v0) / fd_step
+        pi_plus, pi_minus = pi0.copy(), pi0.copy()
+        pi_plus[i] += fd_step
+        pi_minus[i] -= fd_step
+        grad_v[i] = (value_at(pi_plus) - value_at(pi_minus)) / (2.0 * fd_step)
     return grad_v, lam0_star

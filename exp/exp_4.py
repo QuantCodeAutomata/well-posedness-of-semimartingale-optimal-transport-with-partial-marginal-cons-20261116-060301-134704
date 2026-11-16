@@ -107,10 +107,10 @@ def main(full: bool = False) -> dict:
     # Each calibrate() call costs about 14s on this grid (an L-BFGS-B run of
     # ~14 cascade+gradient solves), and convexity_defect_modulus costs about
     # 1.3s/sample (3 cascade solves/sample). With UNIQUENESS_N_STARTS=5 and
-    # PRICE_N_DIRECTIONS=8 fixed (not reduced, per the time budget), the
-    # reduced STRONG_CONVEXITY_N_SAMPLES_RUN=40 default keeps the whole
-    # experiment under ~6 minutes, so no further reduction of n_samples is
-    # applied here; `--full` restores STRONG_CONVEXITY_N_SAMPLES_PAPER.
+    # PRICE_N_DIRECTIONS=8 kept at their full scale, the reduced
+    # STRONG_CONVEXITY_N_SAMPLES_RUN=40 default keeps the whole experiment
+    # under about 6 minutes, so no further reduction of n_samples is applied
+    # here; `--full` restores STRONG_CONVEXITY_N_SAMPLES_PAPER.
     n_samples = STRONG_CONVEXITY_N_SAMPLES_PAPER if full else STRONG_CONVEXITY_N_SAMPLES_RUN
 
     print(f"[exp_4] payoff family: P={payoffs.P} maturities, MP={payoffs.MP} payoffs total")

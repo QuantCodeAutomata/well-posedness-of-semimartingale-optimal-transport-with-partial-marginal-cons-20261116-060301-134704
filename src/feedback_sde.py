@@ -4,9 +4,8 @@ The feedback drift and diffusion coefficients (alpha^lambda, beta^lambda) are
 obtained from the HJB cascade solution via the Hamiltonian gradient (eq. 86,
 p.35): (alpha, beta) = grad_{(a,b)} H(t, x, grad_x phi_p^lambda, (1/2) lap phi_p^lambda).
 They are stored on the cascade's (time level, spatial grid) and are
-interpolated in between with scipy.interpolate.RegularGridInterpolator, as
-suggested by the implementation notes of exp_5. In dimension d=1,
-sigma^lambda = sqrt(beta^lambda) (real since beta^lambda >= KAPPA_MIN > 0).
+interpolated in between with scipy.interpolate.RegularGridInterpolator. In
+dimension d=1, sigma^lambda = sqrt(beta^lambda) (real since beta^lambda >= KAPPA_MIN > 0).
 
 Custom implementation (paper eq. 74, 86); Euler-Maruyama simulation uses
 numpy only (no higher-level SDE library covers feedback coefficients obtained

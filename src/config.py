@@ -53,10 +53,10 @@ PICARD_SWEEPS = 3  # policy-iteration sweeps per implicit time step for the nonl
 # exp_1: convexity / differentiability verification of Phi_0.
 # ---------------------------------------------------------------------------
 CONVEXITY_LAMBDA_BOX = 1.5  # half-width Lambda of the sampling box [-Lambda,Lambda]^{MP} for lambda_1, lambda_2
-CONVEXITY_N_PAIRS_PAPER = 100  # number of (lambda_1, lambda_2) pairs, per implementation_notes ("at least 100 pairs")
-CONVEXITY_N_THETA_PAPER = 10  # number of theta values in [0,1] sampled per pair, per implementation_notes
-CONVEXITY_N_PAIRS_RUN = 20  # reduced number of pairs used for the executed run (time budget)
-CONVEXITY_N_THETA_RUN = 5  # reduced number of theta values used for the executed run (time budget)
+CONVEXITY_N_PAIRS_PAPER = 100  # number of (lambda_1, lambda_2) pairs sampled for the Jensen-type check (Prop. 2.4)
+CONVEXITY_N_THETA_PAPER = 10  # number of theta values in [0,1] sampled per pair for the same check
+CONVEXITY_N_PAIRS_RUN = 20  # number of pairs used in the executed run (reduced to fit the time available)
+CONVEXITY_N_THETA_RUN = 5  # number of theta values used in the executed run (reduced to fit the time available)
 FD_STEP_GRADIENT = 1e-3  # finite-difference step for numerical differentiation of Phi_0
 RANDOM_SEED = 20261116  # seed for every synthetic / Monte Carlo draw in this repository
 
@@ -72,8 +72,8 @@ FP_MAX_ITER = 60  # outer alternating-projection iterations for the primal feedb
 # ---------------------------------------------------------------------------
 CALIBRATION_TOL = 1e-7  # optimisation tolerance on the dual gradient (L-BFGS-B 'gtol')
 CALIBRATION_MAX_ITER = 200  # maximum L-BFGS-B iterations
-MC_N_PATHS_PAPER = 200_000  # N_mc in implementation_notes (10^4-10^6); full configuration
-MC_N_PATHS_RUN = 20_000  # reduced Monte Carlo sample used for the executed run (time budget)
+MC_N_PATHS_PAPER = 200_000  # Monte Carlo sample size in the suggested range 10^4-10^6; full configuration
+MC_N_PATHS_RUN = 20_000  # Monte Carlo sample used in the executed run (reduced to fit the time available)
 MC_N_STEPS = 200  # Euler-Maruyama steps per unit maturity length for the Monte Carlo recovery
 
 # ---------------------------------------------------------------------------
@@ -93,5 +93,5 @@ VALUE_GRADIENT_FD_STEP = 1e-3  # finite-difference step for the C^1 check grad V
 AW2_N_PERTURBATIONS_PAPER = 6  # paper-scale number of pi_n -> pi perturbation sizes epsilon_n -> 0
 AW2_N_PERTURBATIONS_RUN = 6  # executed number of perturbation sizes (same order, kept small)
 AW2_MC_PATHS_PAPER = 20_000  # Monte Carlo paths for the common-noise coupled SDE simulation
-AW2_MC_PATHS_RUN = 4_000  # reduced Monte Carlo sample used for the executed run (time budget)
+AW2_MC_PATHS_RUN = 4_000  # Monte Carlo sample used in the executed run (reduced to fit the time available)
 AW2_N_STEPS = 200  # Euler-Maruyama steps per unit maturity length for the coupled simulation

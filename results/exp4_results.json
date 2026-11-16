@@ -32,6 +32,6 @@
     669.6461231602566,
     794.1165895389835
   ],
-  "grad_V_vs_lambda_star_max_error": 0.3176885360770978,
-  "elapsed_seconds": 323.4750545024872
+  "grad_V_vs_lambda_star_max_error": 0.009200544903231744,
+  "elapsed_seconds": 298.0516755580902
 }
