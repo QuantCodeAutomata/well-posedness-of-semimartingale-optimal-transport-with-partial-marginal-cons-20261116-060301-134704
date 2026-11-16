@@ -1,0 +1,35 @@
+{
+  "experiment": "exp_3",
+  "title": "Gradient-based model calibration via HJB dual optimization with linearized pricing equations",
+  "full_configuration": false,
+  "mc_n_paths": 20000,
+  "target_price_vector": [
+    0.021872335941593463,
+    0.09164143287260229,
+    0.02703270510969555,
+    0.08759062508463361,
+    0.18743535956629265
+  ],
+  "lambda_star": [
+    -1.2492168325847426,
+    -0.3399195455494157,
+    -9.767272832774387,
+    -2.6827535972077414,
+    -6.692777668712563
+  ],
+  "phi0_star": -1.1847034742508227,
+  "V_pi": -0.6272535897651157,
+  "gradient_residual_max": 3.692620901274424e-07,
+  "monte_carlo_prices": [
+    0.021783205756183942,
+    0.09140906397582714,
+    0.027647129429807342,
+    0.08974016982626444,
+    0.18908894250105865
+  ],
+  "monte_carlo_calibration_max_error": 0.0021495447416308294,
+  "multi_start_max_lambda_deviation": 0.00010522362454090661,
+  "converged": true,
+  "n_iter": 14,
+  "elapsed_seconds": 54.53464388847351
+}

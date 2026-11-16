@@ -1,0 +1,37 @@
+{
+  "experiment": "exp_4",
+  "title": "Uniqueness and local Lipschitz stability of dual optimizers: strong convexity and nonempty interior of the admissible price set",
+  "full_configuration": false,
+  "n_convexity_samples": 40,
+  "pi0": [
+    0.021872335941593463,
+    0.09164143287260229,
+    0.02703270510969555,
+    0.08759062508463361,
+    0.18743535956629265
+  ],
+  "lambda_star": [
+    -1.2492168325847426,
+    -0.3399195455494157,
+    -9.767272832774387,
+    -2.6827535972077414,
+    -6.692777668712563
+  ],
+  "strong_convexity_modulus_mK": 0.001326741484129897,
+  "strong_convexity_positive": true,
+  "uniqueness_max_pairwise_distance": 0.0009527340822296312,
+  "uniqueness_confirmed": true,
+  "lipschitz_estimated_constant": 794.1165895389835,
+  "lipschitz_ratios": [
+    359.91699590124574,
+    477.2197610247483,
+    681.5689728203394,
+    231.0445928545276,
+    361.93049135320837,
+    436.13537355952167,
+    669.6461231602566,
+    794.1165895389835
+  ],
+  "grad_V_vs_lambda_star_max_error": 0.3176885360770978,
+  "elapsed_seconds": 323.4750545024872
+}
